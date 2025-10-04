@@ -2,9 +2,9 @@
 import SVGIcon from './SVGIcon.vue';
 </script>
   <template>
-    <section class="loading-state">
+    <div class="loading-state">
       <SVGIcon name="pokeball" class="loading-state__icon" />
-    </section>
+    </div>
   </template>
 
 <style scoped>

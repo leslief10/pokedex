@@ -1,21 +1,27 @@
 <script setup>
-import { onMounted } from 'vue';
-import { getPokemons, getPokemonDetails } from './services/PokemonService';
+import { ref } from 'vue';
+import Welcome from './components/Welcome.vue';
 import Home from './components/Home.vue';
-// import LoadingState from './components/LoadingState.vue';
 
-onMounted(async () => {
-  getPokemons();
-  getPokemonDetails();
-})
+const showHome = ref(false);
+
+const handleDisplayHome = () => {
+  showHome.value = true;
+}
+
 </script>
 
 <template>
-  <main class="main">
-    <Home />
-    <!-- <LoadingState /> -->
-  </main>
+    <main class="app">
+      <Welcome v-if="!showHome" @display-home="handleDisplayHome" />
+      <Home v-else />
+    </main>
 </template>
 
 <style scoped>
+.app {
+  width: 100%;
+  min-height: inherit;
+  background-color: var(--almost-white);
+}
 </style>

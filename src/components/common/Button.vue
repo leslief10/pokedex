@@ -1,4 +1,6 @@
 <script setup>
+const emit = defineEmits(['button-clicked']);
+
 defineProps({
   variant: {
     type: String,
@@ -10,7 +12,6 @@ defineProps({
   }
 });
 
-const emit = defineEmits(['button-clicked']);
 </script>
 
 <template>
@@ -18,7 +19,7 @@ const emit = defineEmits(['button-clicked']);
     class="button"
     :class="variant"
     :disabled="disabled"
-    @click="emit('button-clicked', $event)"
+    @click="emit('button-clicked')"
   >
     <slot></slot>
   </button>
@@ -46,11 +47,16 @@ const emit = defineEmits(['button-clicked']);
   color: var(--white);
 }
 
+.secondary {
+  background-color: transparent;
+}
+
 .icon {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: 50%;
   background-color: var(--lightest-grey);
+  color: var(--light-grey);
 }
 
 .button:disabled {
@@ -68,9 +74,10 @@ const emit = defineEmits(['button-clicked']);
     background-color: var(--dark-red);
   }
 
-  .icon:hover {
+  /* .icon:hover {
     background-color: var(--lighter-grey);
-  }
+    color: var(--burned-yellow);
+  } */
 
   .button:disabled:hover {
     background-color: var(--medium-grey);

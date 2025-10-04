@@ -16,8 +16,8 @@ const getPokemons = async () => {
   }
 }
 
-const getPokemonDetails = async () => {
-    const url = 'https://pokeapi.co/api/v2/pokemon/squirtle';
+const getPokemonDetails = async (name) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
   try {
     const response = await fetch(url);
 
