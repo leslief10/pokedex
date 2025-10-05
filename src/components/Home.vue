@@ -6,5 +6,4 @@ import PokemonExplorer from './PokemonExplorer.vue';
   <PokemonExplorer />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

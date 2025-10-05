@@ -3,19 +3,27 @@ import SVGIcon from './SVGIcon.vue';
 import Button from './common/Button.vue';
 
 const emit = defineEmits(['display-home']);
-
 </script>
 
 <template>
   <section class="flex welcome">
-    <SVGIcon name="pikachu" class="welcome__hero" />
+    <SVGIcon
+      name="pikachu"
+      class="welcome__hero"
+    />
     <div class="flex welcome__text">
       <h1 class="welcome__text--title">Welcome to Pokédex</h1>
-      <p class="welcome__text--description">The digital encyclopedia created by Professor Oak is an invaluable tool to Trainers in the Pokémon world.</p>
+      <p class="welcome__text--description">
+        The digital encyclopedia created by Professor Oak is an invaluable tool
+        to Trainers in the Pokémon world.
+      </p>
     </div>
-    <Button variant="primary" @button-clicked="emit('display-home', true)">
+    <Button
+      variant="primary"
+      @button-clicked="emit('display-home', true)"
+    >
       Get started
-    </Button> 
+    </Button>
   </section>
 </template>
 

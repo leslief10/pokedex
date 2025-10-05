@@ -13,7 +13,10 @@ const handleSubmit = (e) => {
 </script>
 
 <template>
-  <form class="search-form" @submit="handleSubmit">
+  <form
+    class="search-form"
+    @submit="handleSubmit"
+  >
     <div class="search-form__container">
       <label for="search"></label>
       <input
@@ -25,7 +28,11 @@ const handleSubmit = (e) => {
         class="search-form__input"
         aria-label="Search Pokémon"
       />
-      <Button type="submit" variant="secondary" class="search-form__button">
+      <Button
+        type="submit"
+        variant="secondary"
+        class="search-form__button"
+      >
         <SVGIcon name="search-icon" />
       </Button>
     </div>
@@ -38,6 +45,8 @@ const handleSubmit = (e) => {
   max-width: 35.625rem;
   height: 3.125rem;
   margin-bottom: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .search-form__container {

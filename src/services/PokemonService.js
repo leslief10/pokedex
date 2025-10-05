@@ -1,5 +1,4 @@
-const getPokemons = async () => {
-  const url = 'https://pokeapi.co/api/v2/pokemon';
+const getPokemons = async (url = 'https://pokeapi.co/api/v2/pokemon') => {
   try {
     const response = await fetch(url);
 
@@ -8,16 +7,15 @@ const getPokemons = async () => {
     }
 
     const data = await response.json();
-    console.log('get Pokemons:', data);
-    
+    return data;
   } catch (error) {
-    console.log(`Error fetching a full Pokemon list: ${error}.`);
-    throw new Error('Unable to get a full Pokemon list. Please try again later.');
+    console.error(`Error fetching Pokemon list: ${error}.`);
+    throw new Error('Unable to get Pokemon list. Please try again later.');
   }
-}
+};
 
 const getPokemonDetails = async (name) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
+  const url = `https://pokeapi.co/api/v2/pokemon/${name}`;
   try {
     const response = await fetch(url);
 
@@ -27,11 +25,13 @@ const getPokemonDetails = async (name) => {
 
     const data = await response.json();
     console.log('get Pokemon Details:', data);
-    
+    return data;
   } catch (error) {
-    console.log(`Error fetching details about this Pokemon: ${error}.`);
-    throw new Error('Unable to get details about this Pokemon. Please try again later.');
+    console.error(`Error fetching details about this Pokemon: ${error}.`);
+    throw new Error(
+      'Unable to get details about this Pokemon. Please try again later.',
+    );
   }
-}
+};
 
-export {getPokemons, getPokemonDetails};
+export { getPokemons, getPokemonDetails };

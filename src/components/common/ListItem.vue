@@ -12,31 +12,42 @@ const props = defineProps({
   isFavorite: {
     type: Boolean,
     default: false,
-  }
+  },
 });
 
 const handleOpenModal = () => {
   emit('open-modal', {
     name: props.name,
-    isFavorite: props.isFavorite
+    isFavorite: props.isFavorite,
+    openModal: true,
   });
-}
+};
 
 const handleFavoriteToggle = () => {
-  emit('open-modal', {
+  emit('toggle-favorite', {
     name: props.name,
-    isFavorite: !props.isFavorite
+    isFavorite: !props.isFavorite,
   });
-}
+};
 </script>
 
 <template>
-  <div class=" flex list-item">
-    <Button variant="secondary" class="list-item__button" @button-clicked="handleOpenModal">
+  <div class="flex list-item">
+    <Button
+      variant="secondary"
+      class="list-item__button"
+      @button-clicked="handleOpenModal"
+    >
       {{ name }}
     </Button>
-    <Button variant="icon" @button-clicked="handleFavoriteToggle">
-      <SVGIcon name="star-icon" :class="{ 'favorite': isFavorite }" />
+    <Button
+      variant="icon"
+      @button-clicked="handleFavoriteToggle"
+    >
+      <SVGIcon
+        name="star-icon"
+        :class="{ favorite: isFavorite }"
+      />
     </Button>
   </div>
 </template>

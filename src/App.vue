@@ -7,15 +7,17 @@ const showHome = ref(false);
 
 const handleDisplayHome = () => {
   showHome.value = true;
-}
-
+};
 </script>
 
 <template>
-    <main class="app">
-      <Welcome v-if="!showHome" @display-home="handleDisplayHome" />
-      <Home v-else />
-    </main>
+  <main class="app">
+    <Welcome
+      v-if="!showHome"
+      @display-home="handleDisplayHome"
+    />
+    <Home v-else />
+  </main>
 </template>
 
 <style scoped>

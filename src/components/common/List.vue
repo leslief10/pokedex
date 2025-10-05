@@ -1,28 +1,37 @@
 <script setup>
-import ListItem from './ListItem.vue';
-
 const emit = defineEmits(['toggle-favorite', 'open-modal']);
 
 defineProps({
-  pokemons: {
+  items: {
     type: Array,
-    default() {
-      return [];
-    },
+    default: () => [],
   },
-  isFavorite: {
-    type: Boolean,
-    default: false,
-  }
+  itemComponent: {
+    type: Object,
+    required: true,
+  },
+  keyProperty: {
+    type: String,
+    default: 'id',
+  },
 });
 </script>
 
 <template>
-    <ul class="list">
-      <li v-for="pokemon in pokemons" :key="pokemon.name" class="list__element">
-        <ListItem :name="pokemon.name" :is-favorite="isFavorite" @open-modal="emit('open-modal', $event)" @toggle-favorite="emit('open-modal', $event)" />
-      </li>
-    </ul>
+  <ul class="list">
+    <li
+      v-for="item in items"
+      :key="item[keyProperty]"
+      class="list__element"
+    >
+      <component
+        :is="itemComponent"
+        v-bind="item"
+        @open-modal="emit('open-modal', $event)"
+        @toggle-favorite="emit('toggle-favorite', $event)"
+      />
+    </li>
+  </ul>
 </template>
 
 <style scoped>

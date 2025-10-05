@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vue/eslint-config-prettier": "^10.2.0",
+    "pinia": "^3.0.3",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.5.22"
   },

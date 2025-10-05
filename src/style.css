@@ -12,18 +12,18 @@ html {
   -moz-osx-font-smoothing: grayscale;
 
   --main-font: 'Lato', sans-serif;
-  --secondary-font: "Montserrat", sans-serif;
-  --burned-yellow: #ECA539;
-  --dark-red: #C00E20;
-  --cherry-red: #F22539;
+  --secondary-font: 'Montserrat', sans-serif;
+  --burned-yellow: #eca539;
+  --dark-red: #c00e20;
+  --cherry-red: #f22539;
   --black: #000000;
   --dark-grey: #353535;
-  --medium-grey: #5E5E5E;
-  --light-grey: #BFBFBF;
-  --lighter-grey: #E8E8E8;
-  --lightest-grey: #F5F5F5;
-  --almost-white: #F9F9F9;
-  --white: #FFFFFF;
+  --medium-grey: #5e5e5e;
+  --light-grey: #bfbfbf;
+  --lighter-grey: #e8e8e8;
+  --lightest-grey: #f5f5f5;
+  --almost-white: #f9f9f9;
+  --white: #ffffff;
 }
 
 a {

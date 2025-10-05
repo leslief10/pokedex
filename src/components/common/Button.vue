@@ -9,9 +9,8 @@ defineProps({
   disabled: {
     type: Boolean,
     default: false,
-  }
+  },
 });
-
 </script>
 
 <template>
@@ -63,7 +62,6 @@ defineProps({
   background-color: var(--light-grey);
   color: var(--white);
 }
-
 
 @media (hover: hover) {
   .button:hover {
