@@ -5,8 +5,8 @@ import Home from './components/Home.vue';
 
 const showHome = ref(false);
 
-const handleDisplayHome = () => {
-  showHome.value = true;
+const handleDisplayHome = (value) => {
+  showHome.value = value;
 };
 </script>
 
@@ -16,7 +16,10 @@ const handleDisplayHome = () => {
       v-if="!showHome"
       @display-home="handleDisplayHome"
     />
-    <Home v-else />
+    <Home
+      v-else
+      @display-home="handleDisplayHome"
+    />
   </main>
 </template>
 

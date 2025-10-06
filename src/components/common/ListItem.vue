@@ -4,31 +4,16 @@ import SVGIcon from '../SVGIcon.vue';
 
 const emit = defineEmits(['toggle-favorite', 'open-modal']);
 
-const props = defineProps({
-  name: {
+defineProps({
+  item: {
     type: String,
-    default: 'Pikachu',
+    default: '',
   },
   isFavorite: {
     type: Boolean,
     default: false,
   },
 });
-
-const handleOpenModal = () => {
-  emit('open-modal', {
-    name: props.name,
-    isFavorite: props.isFavorite,
-    openModal: true,
-  });
-};
-
-const handleFavoriteToggle = () => {
-  emit('toggle-favorite', {
-    name: props.name,
-    isFavorite: !props.isFavorite,
-  });
-};
 </script>
 
 <template>
@@ -36,13 +21,13 @@ const handleFavoriteToggle = () => {
     <Button
       variant="secondary"
       class="list-item__button"
-      @button-clicked="handleOpenModal"
+      @button-clicked="emit('open-modal')"
     >
-      {{ name }}
+      {{ item }}
     </Button>
     <Button
       variant="icon"
-      @button-clicked="handleFavoriteToggle"
+      @button-clicked="emit('toggle-favorite')"
     >
       <SVGIcon
         name="star-icon"

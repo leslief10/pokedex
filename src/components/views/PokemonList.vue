@@ -1,16 +1,16 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue';
 import { storeToRefs } from 'pinia';
-import { usePokemonStore } from '../stores/pokemon';
-import List from './common/List.vue';
-import ListItem from './common/ListItem.vue';
+import { usePokemonStore } from '../../stores/pokemon';
+import List from '../common/List.vue';
+import PokemonItem from '../PokemonItem.vue';
 
 const pokemonStore = usePokemonStore();
 const { pokemons, isLoading, hasMore } = storeToRefs(pokemonStore);
 const { loadMorePokemons } = pokemonStore;
 const listRef = ref(null);
 
-const emit = defineEmits(['toggle-favorite', 'open-modal']);
+const emit = defineEmits(['open-modal']);
 
 const handleScroll = () => {
   if (isLoading.value || !hasMore.value) return;
@@ -36,9 +36,8 @@ onUnmounted(() => {
   <List
     ref="listRef"
     :items="pokemons"
-    :item-component="ListItem"
+    :item-component="PokemonItem"
     @open-modal="emit('open-modal', $event)"
-    @toggle-favorite="emit('toggle-favorite', $event)"
   />
   <div
     v-if="isLoading"

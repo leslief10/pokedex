@@ -1,5 +1,5 @@
 <script setup>
-const emit = defineEmits(['toggle-favorite', 'open-modal']);
+const emit = defineEmits(['open-modal']);
 
 defineProps({
   items: {
@@ -28,7 +28,6 @@ defineProps({
         :is="itemComponent"
         v-bind="item"
         @open-modal="emit('open-modal', $event)"
-        @toggle-favorite="emit('toggle-favorite', $event)"
       />
     </li>
   </ul>

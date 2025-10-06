@@ -1,6 +1,8 @@
 <script setup>
+import { computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { usePokemonStore } from '../stores/pokemon';
+import { useFavoritesStore } from '../stores/favorites';
 import { useClipboard } from '../composables/useClipboard';
 import Modal from './common/Modal.vue';
 import Button from './common/Button.vue';
@@ -8,29 +10,28 @@ import SVGIcon from './SVGIcon.vue';
 
 const emit = defineEmits(['close-modal']);
 
-defineProps({
-  isFavorite: {
-    type: Boolean,
-    default: false,
-  },
-});
-
 const pokemonStore = usePokemonStore();
+const favoritesStore = useFavoritesStore();
 const { pokemonDetails } = storeToRefs(pokemonStore);
+const { toggleFavorite, isFavorite } = favoritesStore;
 const { copyToClipboard } = useClipboard();
 
 const handleCopy = () => {
   const pokemonData = {
     name: pokemonDetails.value.name,
-    abilities: [
-      pokemonDetails.value.abilities
-        .map((ability) => ability.ability.name)
-        .join(', '),
-    ],
+    abilities: pokemonDetails.value.abilities.map(
+      (ability) => ability.ability.name,
+    ),
   };
 
   copyToClipboard(pokemonData);
 };
+
+const handleToggleFavorite = () => {
+  toggleFavorite(pokemonDetails.value.name);
+};
+
+const handleIsFavorite = computed(() => isFavorite(pokemonDetails.value.name));
 </script>
 
 <template>
@@ -84,10 +85,13 @@ const handleCopy = () => {
           @button-clicked="handleCopy"
           >Share to my friends</Button
         >
-        <Button variant="icon">
+        <Button
+          variant="icon"
+          @button-clicked="handleToggleFavorite"
+        >
           <SVGIcon
             name="star-icon"
-            :class="{ favorite: isFavorite }"
+            :class="{ favorite: handleIsFavorite }"
           />
         </Button>
       </div>
@@ -107,6 +111,7 @@ const handleCopy = () => {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  border-radius: 50%;
 }
 
 .pokemon-details__close-button--svg {

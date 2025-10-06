@@ -6,10 +6,6 @@ defineProps({
     type: String,
     default: 'primary',
   },
-  disabled: {
-    type: Boolean,
-    default: false,
-  },
 });
 </script>
 
@@ -17,7 +13,6 @@ defineProps({
   <button
     class="button"
     :class="variant"
-    :disabled="disabled"
     @click="emit('button-clicked')"
   >
     <slot></slot>
@@ -46,6 +41,10 @@ defineProps({
   color: var(--white);
 }
 
+.primary:focus-visible {
+  outline: 1px solid var(--medium-grey);
+}
+
 .secondary {
   background-color: transparent;
 }
@@ -58,9 +57,15 @@ defineProps({
   color: var(--light-grey);
 }
 
-.button:disabled {
+.inactive {
   background-color: var(--light-grey);
   color: var(--white);
+}
+
+.secondary:focus-visible,
+.icon:focus-visible,
+.inactive:focus-visible {
+  outline: 1px solid var(--burned-yellow);
 }
 
 @media (hover: hover) {
@@ -72,12 +77,7 @@ defineProps({
     background-color: var(--dark-red);
   }
 
-  /* .icon:hover {
-    background-color: var(--lighter-grey);
-    color: var(--burned-yellow);
-  } */
-
-  .button:disabled:hover {
+  .inactive:hover {
     background-color: var(--medium-grey);
   }
 }

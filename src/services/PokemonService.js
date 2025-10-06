@@ -10,7 +10,7 @@ const getPokemons = async (url = 'https://pokeapi.co/api/v2/pokemon') => {
     return data;
   } catch (error) {
     console.error(`Error fetching Pokemon list: ${error}.`);
-    throw new Error('Unable to get Pokemon list. Please try again later.');
+    throw new Error('Unable to get Pokemon list.');
   }
 };
 
@@ -24,13 +24,10 @@ const getPokemonDetails = async (name) => {
     }
 
     const data = await response.json();
-    console.log('get Pokemon Details:', data);
     return data;
   } catch (error) {
     console.error(`Error fetching details about this Pokemon: ${error}.`);
-    throw new Error(
-      'Unable to get details about this Pokemon. Please try again later.',
-    );
+    throw new Error('Unable to get details about this Pokemon.');
   }
 };
 
