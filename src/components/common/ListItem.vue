@@ -1,6 +1,6 @@
 <script setup>
 import Button from './Button.vue';
-import SVGIcon from '../SVGIcon.vue';
+import SVGIcon from './SVGIcon.vue';
 
 const emit = defineEmits(['toggle-favorite', 'open-modal']);
 

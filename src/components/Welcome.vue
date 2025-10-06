@@ -1,5 +1,5 @@
 <script setup>
-import SVGIcon from './SVGIcon.vue';
+import SVGIcon from './common/SVGIcon.vue';
 import Button from './common/Button.vue';
 
 const emit = defineEmits(['display-home']);

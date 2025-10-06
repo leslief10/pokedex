@@ -6,7 +6,7 @@ import { useFavoritesStore } from '../stores/favorites';
 import { useClipboard } from '../composables/useClipboard';
 import Modal from './common/Modal.vue';
 import Button from './common/Button.vue';
-import SVGIcon from './SVGIcon.vue';
+import SVGIcon from './common/SVGIcon.vue';
 
 const emit = defineEmits(['close-modal']);
 

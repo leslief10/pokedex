@@ -23,10 +23,15 @@ const emit = defineEmits(['open-modal']);
   />
   <List
     v-else
+    class="fav-pokemon-list"
     :items="favorites"
     :item-component="PokemonItem"
     @open-modal="emit('open-modal', $event)"
   />
 </template>
 
-<style scoped></style>
+<style scoped>
+.fav-pokemon-list {
+  padding-bottom: 4.375rem;
+}
+</style>

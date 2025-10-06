@@ -35,12 +35,14 @@ onUnmounted(() => {
 <template>
   <List
     ref="listRef"
+    :class="[!isLoading ? 'pokemon-list' : '']"
     :items="pokemons"
     :item-component="PokemonItem"
     @open-modal="emit('open-modal', $event)"
   />
   <div
     v-if="isLoading"
+    :class="[isLoading ? 'loading-indicator--extra-padding' : '']"
     class="loading-indicator"
   >
     Loading more Pokémons...
@@ -48,9 +50,17 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
+.pokemon-list {
+  padding-bottom: 4.375rem;
+}
+
 .loading-indicator {
   text-align: center;
   padding: 1rem;
   color: var(--medium-grey);
+}
+
+.loading-indicator--extra-padding {
+  padding-bottom: 4.375rem;
 }
 </style>

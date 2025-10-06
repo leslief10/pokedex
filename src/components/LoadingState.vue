@@ -1,5 +1,5 @@
 <script setup>
-import SVGIcon from './SVGIcon.vue';
+import SVGIcon from './common/SVGIcon.vue';
 </script>
 <template>
   <div class="flex loading-state">

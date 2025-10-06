@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import Button from './Button.vue';
-import SVGIcon from '../SVGIcon.vue';
+import SVGIcon from './SVGIcon.vue';
 
 const searchQuery = ref('');
 
