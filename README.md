@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a digital Pokédex that allows users to browse, search, and learn about different Pokémon species. It provides information about each Pokémon, like their weight, height and type. It also allows users to copy a Pokémon's name and abilities to a browser's clipboard and to save their favorites Pokémons in a separate list. 
+This project is a digital Pokédex that allows users to browse, search, and learn about different Pokémon species. It provides information about each Pokémon, like their weight, height and type. It also allows users to copy a Pokémon's name and abilities to a browser's clipboard and to save their favorites Pokémons in a separate list.
 
 ## Table of Contents
 
@@ -81,4 +81,4 @@ So, in previous projects I'd noticed that Vite and SVGs don't work well so I dec
 
 I knew that I would need to implement Pinia so I would have a global store for `FavPokemonList.vue`, but I also created one for `PokemonList.vue`, so I would have a centralized data management and to make it easier to shate data, loading and error states between the components without having to worry about component hierarchy.
 
-The main Pokemon API is paginated (because apparently now there are more than 1300 Pokemons, which is insane, because I remember when there were only 150), so I implemented infinited scrolling so if someone wants to see the full list, they can :). 
+The main Pokemon API is paginated (because apparently now there are more than 1300 Pokemons, which is insane, because I remember when there were only 150), so I implemented infinited scrolling so if someone wants to see the full list, they can :).

@@ -1,6 +1,6 @@
-import { ref, computed } from "vue";
-import PokemonList from "../components/views/PokemonList.vue";
-import FavPokemonList from "../components/views/FavPokemonList.vue";
+import { ref, computed } from 'vue';
+import PokemonList from '../components/views/PokemonList.vue';
+import FavPokemonList from '../components/views/FavPokemonList.vue';
 
 export function useViewManager() {
   const currentView = ref('PokemonList');

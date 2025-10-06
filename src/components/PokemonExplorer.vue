@@ -14,7 +14,7 @@ const pokemonStore = usePokemonStore();
 const { pokemons, isLoading, error } = storeToRefs(pokemonStore);
 const { fetchPokemons, fetchPokemonDetails } = pokemonStore;
 
-const {isOpen: toggleModal, open: openModal, close: closeModal} = useModal();
+const { isOpen: toggleModal, open: openModal, close: closeModal } = useModal();
 const { activeComponent, setView } = useViewManager();
 
 onMounted(async () => {
@@ -37,7 +37,6 @@ const handleOpenModal = async (pokemon) => {
     openModal();
   }
 };
-
 </script>
 
 <template>

@@ -10,7 +10,6 @@ const handleViewChange = (view) => {
   activeView.value = view;
   emit('toggle-view', view);
 };
-
 </script>
 
 <template>

@@ -52,6 +52,7 @@ export const usePokemonStore = defineStore('pokemon', () => {
     pokemonDetails,
     isLoading,
     error,
+    nextUrl,
     hasMore,
     fetchPokemons,
     loadMorePokemons,

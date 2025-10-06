@@ -16,8 +16,8 @@ defineProps({
   },
   buttonText: {
     type: String,
-    default: ''
-  }
+    default: '',
+  },
 });
 
 const emit = defineEmits(['button-clicked']);

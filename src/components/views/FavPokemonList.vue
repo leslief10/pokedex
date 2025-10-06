@@ -17,7 +17,7 @@ const emit = defineEmits(['open-modal']);
 </script>
 
 <template>
-  <EmptyState 
+  <EmptyState
     v-if="!favorites.length"
     v-bind="emptyStateProps"
   />

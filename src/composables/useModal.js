@@ -1,4 +1,4 @@
-import { ref } from "vue";
+import { ref } from 'vue';
 
 export function useModal() {
   const isOpen = ref(false);

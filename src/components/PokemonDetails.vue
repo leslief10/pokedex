@@ -41,6 +41,7 @@ const handleIsFavorite = computed(() => isFavorite(pokemonDetails.value.name));
         <Button
           variant="secondary"
           class="pokemon-details__close-button"
+          data-testid="close-button"
           @button-clicked="emit('close-modal', false)"
         >
           <SVGIcon
@@ -82,11 +83,13 @@ const handleIsFavorite = computed(() => isFavorite(pokemonDetails.value.name));
       <div class="flex pokemon-details__footer">
         <Button
           variant="primary"
+          data-testid="share-button"
           @button-clicked="handleCopy"
           >Share to my friends</Button
         >
         <Button
           variant="icon"
+          data-testid="toggle-fav-button"
           @button-clicked="handleToggleFavorite"
         >
           <SVGIcon
