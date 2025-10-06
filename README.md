@@ -7,6 +7,7 @@ This project is a digital Pokédex that allows users to browse, search, and lear
 ## Table of Contents
 
 - [Features](#features)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Testing](#testing)
@@ -77,8 +78,8 @@ src/
 
 ## Why I did some of the things I did
 
-So, in previous projects I'd noticed that Vite and SVGs don't work well so I decided to import the SVGs as components [here's an article focused on Vite + Vue](https://dev.to/geowrgetudor/dealing-with-svg-icons-in-vue-vite-an9). I installed vite-svg-loader as a dependency and created a dynamic component so it would load the SVG I need. I also went with a dynamic component in `List.vue` and `PokemonExplorer.vue`; in `List.vue` it was because I wanted it to be as generic as possible for a common component and for `PokemonExplorer.vue`, I wanted to tab between lists without having to mount/unmount. It also makes the code a bit more readable.
+So, in previous projects I'd noticed that Vite and SVGs don't work well together so I decided to import the SVGs as components [here's an article focused on Vite + Vue](https://dev.to/geowrgetudor/dealing-with-svg-icons-in-vue-vite-an9). I installed vite-svg-loader as a dependency and created a dynamic component so it would load the SVG I need. I also went with a dynamic component in `List.vue` and `PokemonExplorer.vue`; in `List.vue` it was because I wanted it to be as generic as possible for a common component and for `PokemonExplorer.vue`, I wanted to tab between lists without having to mount/unmount. It also makes the code a bit more readable.
 
-I knew that I would need to implement Pinia so I would have a global store for `FavPokemonList.vue`, but I also created one for `PokemonList.vue`, so I would have a centralized data management and to make it easier to shate data, loading and error states between the components without having to worry about component hierarchy.
+I knew that I would need to implement Pinia so I would have a global store for `FavPokemonList.vue`, but I also created one for `PokemonList.vue`, so I would have a centralized data management and to make it easier to share data, loading and error states between the components without having to worry about component hierarchy.
 
 The main Pokemon API is paginated (because apparently now there are more than 1300 Pokemons, which is insane, because I remember when there were only 150), so I implemented infinited scrolling so if someone wants to see the full list, they can :).
